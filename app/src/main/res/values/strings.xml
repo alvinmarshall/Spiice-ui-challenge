@@ -1,3 +1,30 @@
 <resources>
     <string name="app_name">Spiice-ui-challenge</string>
+    <string name="title_activity_spiice_nav">SpiiceNavActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_search">Search</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_messages">Messages</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="on_board_header">Spiice</string>
+
+    <string name="on_board_footer_1">Find projects from companies\n everywhere in the word</string>
+    <string name="on_board_footer_2">Make money while working\n on awesome projects</string>
+    <string name="on_board_footer_3">Chat with others freelancers\n and develop your network</string>
+    <string name="on_board_footer_4">Work hard and level up!</string>
+    <string name="on_board_footer_5">Enjoy your progress!</string>
+    <string name="label_btn_starter">Discover the platform</string>
+    <string name="label_login_footer">You have an account ? Log-in</string>
+    <string name="label_header_sign_in">Sign-in</string>
+    <string name="label_btn_sign_in">Sign-in</string>
+    <string name="label_register_footer">Don\'t have an account ? Register</string>
+    <string name="label_header_sign_up">Sign-up</string>
+    <string name="label_hint_first_name">First name</string>
+    <string name="label_hint_last_name">Last name</string>
+    <string name="label_hint_email">Email</string>
+    <string name="label_hint_password">password</string>
+    <string name="label_btn_sign_up">Sign-up</string>
+
+
 </resources>

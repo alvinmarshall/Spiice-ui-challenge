@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/starterFragment">
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.cheise_proj.spiice_ui_challenge.onBoarding.ui.signup.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.cheise_proj.spiice_ui_challenge.onBoarding.ui.signin.SignInFragment"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            android:id="@+id/action_signInFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment"
+            app:popUpTo="@id/starterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/starterFragment"
+        android:name="com.cheise_proj.spiice_ui_challenge.onBoarding.ui.starter.StarterFragment"
+        android:label="fragment_starter"
+        tools:layout="@layout/fragment_starter" >
+        <action
+            android:id="@+id/action_starterFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_starterFragment_to_onBoardingFragment"
+            app:destination="@id/onBoardingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/onBoardingFragment"
+        android:name="com.cheise_proj.spiice_ui_challenge.onBoarding.ui.onBoard.OnBoardingFragment"
+        android:label="fragment_on_boarding"
+        tools:layout="@layout/fragment_on_boarding" />
+</navigation>
