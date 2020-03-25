@@ -87,6 +87,9 @@ buildscript {
 
         //okhttp
         okhttpVersion = '4.4.0'
+
+        //MPA CHART
+        mpaChartVersion = 'v3.1.0'
     }
     repositories {
         google()
@@ -106,6 +109,7 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven { url 'https://jitpack.io' }
         
     }
 }

@@ -5,4 +5,6 @@
     <color name="colorAccent">#CABDFD</color>
 
     <color name="color_text_black">#120E21</color>
+    <color name="colorSecondaryColor">#FBEAFF</color>
+    <color name="color_layout_background">#FAF9FE</color>
 </resources>

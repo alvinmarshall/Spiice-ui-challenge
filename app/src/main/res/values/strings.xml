@@ -1,14 +1,16 @@
 <resources>
     <string name="app_name">Spiice-ui-challenge</string>
     <string name="title_activity_spiice_nav">SpiiceNavActivity</string>
-    <string name="title_home">Home</string>
+
+    <!--    NAV MENU-->
+    <string name="title_feed">Feed</string>
     <string name="title_search">Search</string>
     <string name="title_profile">Profile</string>
     <string name="title_messages">Messages</string>
     <string name="title_activity_main2">Main2Activity</string>
 
+    <!--    ON BOARDING-->
     <string name="on_board_header">Spiice</string>
-
     <string name="on_board_footer_1">Find projects from companies\n everywhere in the word</string>
     <string name="on_board_footer_2">Make money while working\n on awesome projects</string>
     <string name="on_board_footer_3">Chat with others freelancers\n and develop your network</string>
@@ -25,6 +27,22 @@
     <string name="label_hint_email">Email</string>
     <string name="label_hint_password">password</string>
     <string name="label_btn_sign_up">Sign-up</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--    FEED INFO-->
+    <string name="label_18_percentage">18%</string>
+    <string name="label_27_total_number">27 k</string>
+    <string name="label_total_gains">Total Gains</string>
+    <string name="label_resume">Resume</string>
+    <string name="label_active_projects">Active projects</string>
+    <string name="label_view_all">View all</string>
+    <string name="label_wireframes">Wireframes</string>
+    <string name="label_francisco_fisher">Francisco Fisher</string>
+    <string name="label_active">Active</string>
+    <string name="label_need_a_new_logo">Need a new logo</string>
+    <string name="label_amel_rio">Amel Rio</string>
+    <string name="label_pending">Pending</string>
 
 
 </resources>

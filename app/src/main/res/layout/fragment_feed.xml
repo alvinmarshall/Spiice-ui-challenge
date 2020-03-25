@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".spiice.ui.feed.FeedFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--    HEADER-->
+        <TextView
+            android:id="@+id/tv_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_medium"
+            android:text="@string/label_resume"
+            android:textColor="@color/color_text_black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <!--    TOTAL GAINS-->
+        <TextView
+            android:id="@+id/tv_total_gains"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:text="@string/label_total_gains"
+            android:textAlignment="viewStart"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.024"
+            app:layout_constraintStart_toStartOf="@id/tv_total_number"
+            app:layout_constraintTop_toBottomOf="@id/tv_header" />
+
+        <!--    TOTAL NUMBER-->
+        <TextView
+            android:id="@+id/tv_total_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:padding="8dp"
+            android:text="@string/label_27_total_number"
+            android:textColor="@color/color_text_black"
+            android:textSize="61sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/chart_bar"
+            app:layout_constraintTop_toBottomOf="@id/tv_total_gains" />
+
+        <!--    TOTAL PERCENTAGE-->
+        <TextView
+            android:id="@+id/tv_total_percentage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="100dp"
+            android:clickable="true"
+            android:drawableStart="@drawable/ic_keyboard_arrow_down_black_24dp"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:text="@string/label_18_percentage"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/chart_bar"
+            app:layout_constraintTop_toBottomOf="@id/tv_total_number" />
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/chart_bar"
+            android:layout_width="0dp"
+            android:layout_height="240dp"
+            app:layout_constraintEnd_toStartOf="@id/tv_total_number"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_header" />
+
+        <!--    ACTIVE PROJECT-->
+        <TextView
+            android:id="@+id/tv_active_project"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/label_active_projects"
+            android:textColor="@color/color_text_black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/btn_view_all"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/chart_bar" />
+
+        <!--    VIEW ALL BUTTON-->
+
+        <FrameLayout
+            android:id="@+id/btn_view_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="105dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/chart_bar">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/secondary_background"
+                android:padding="8dp"
+                android:text="@string/label_view_all"
+                android:textColor="@color/color_text_black"
+                android:textSize="16sp" />
+        </FrameLayout>
+
+        <!--    CARD ONE-->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_item_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:elevation="5dp"
+            android:focusable="true"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_active_project">
+
+            <!--        CONTAINER-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="24dp">
+
+                <!--            WIREFRAMES-->
+                <TextView
+                    android:id="@+id/tv_wire_frames"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:text="@string/label_wireframes"
+                    android:textColor="@color/color_text_black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+
+                    />
+
+                <!--            NAME-->
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_wire_frames"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/label_francisco_fisher"
+                    android:textSize="16sp"
+
+                    />
+
+                <!--            ACTIVE-->
+                <TextView
+                    android:id="@+id/tv_active"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_wire_frames"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/label_active"
+                    android:textSize="16sp"
+
+                    />
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!--    CARD TWO-->
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_item_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:elevation="5dp"
+            android:focusable="true"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_item_1">
+
+            <!--        CONTAINER-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="24dp">
+
+                <!--            NEED LOGO-->
+                <TextView
+                    android:id="@+id/tv_need_logo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:text="@string/label_need_a_new_logo"
+                    android:textColor="@color/color_text_black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+
+                    />
+
+                <!--            NAME-->
+                <TextView
+                    android:id="@+id/tv_name2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_need_logo"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/label_amel_rio"
+                    android:textSize="16sp"
+
+                    />
+
+                <!--            PENDING-->
+                <TextView
+                    android:id="@+id/tv_pending"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_need_logo"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/label_pending"
+                    android:textSize="16sp"
+
+                    />
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

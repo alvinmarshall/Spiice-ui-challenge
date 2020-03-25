@@ -1,5 +1,6 @@
 package com.cheise_proj.spiice_ui_challenge.onBoarding.ui.signin
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.cheise_proj.spiice_ui_challenge.R
+import com.cheise_proj.spiice_ui_challenge.spiice.SpiiceNavActivity
 import kotlinx.android.synthetic.main.fragment_sign_in.*
 
 /**
@@ -27,6 +29,12 @@ class SignInFragment : Fragment() {
         tv_footer.setOnClickListener {
             val action = SignInFragmentDirections.actionSignInFragmentToSignUpFragment()
             findNavController().navigate(action)
+        }
+
+        btn_sign_in.setOnClickListener {
+            val action = SignInFragmentDirections.actionSignInFragmentToSpiiceNavActivity()
+            findNavController().navigate(action)
+            activity?.finish()
         }
     }
 
