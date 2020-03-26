@@ -7,4 +7,5 @@
     <color name="color_text_black">#120E21</color>
     <color name="colorSecondaryColor">#FBEAFF</color>
     <color name="color_layout_background">#FAF9FE</color>
+    <color name="card_module_background">#FAF9FE</color>
 </resources>
