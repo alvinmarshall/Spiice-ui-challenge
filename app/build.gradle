@@ -34,8 +34,6 @@ android {
     }
 
 
-// To inline the bytecode built with JVM target 1.8 into
-// bytecode that is being built with JVM target 1.6. (e.g. navArgs)
 
 }
 
@@ -66,4 +64,8 @@ dependencies {
 
     //MPA CHART
     implementation "com.github.PhilJay:MPAndroidChart:$rootProject.mpaChartVersion"
+
+    //glide
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    kapt "com.github.bumptech.glide:compiler:$glide_version"
 }

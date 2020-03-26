@@ -45,4 +45,11 @@
     <string name="label_pending">Pending</string>
 
 
+    <!--    PROFILE-->
+    <string name="label_description">Description</string>
+    <string name="label_average_rating">Average rating</string>
+    <string name="label_last_review">Last review:</string>
+    <string name="label_portfolio">Portfolio</string>
+
+
 </resources>
