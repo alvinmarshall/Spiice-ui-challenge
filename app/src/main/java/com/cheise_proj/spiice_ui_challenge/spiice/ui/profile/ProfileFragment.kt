@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.cheise_proj.spiice_ui_challenge.R
 import com.cheise_proj.spiice_ui_challenge.common.GlideApp
@@ -35,6 +36,14 @@ class ProfileFragment : Fragment() {
         configViewModel()
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        btn_view_all.setOnClickListener {
+            val action = ProfileFragmentDirections.actionProfileFragmentToProfileReviewsFragment()
+            findNavController().navigate(action)
+        }
+    }
+
     private fun initRecyclerView() {
         adapter = PortfolioAdapter()
         recycler_view.apply {
@@ -52,13 +61,13 @@ class ProfileFragment : Fragment() {
     private fun subscribeObserver() {
         viewModel.getProfile.observe(viewLifecycleOwner, Observer { profile ->
             with(profile) {
-                val sender = "- ${reviews.lastOrNull()?.name}"
+                val sender = "- ${reviews.firstOrNull()?.name}"
                 val reviewNumber = "${reviews.size} reviews"
                 tv_name.text = name
                 tv_job_title.text = jobTitle
                 tv_description_body.text = description
-                rb_rating.rating = reviews.lastOrNull()?.ratingNumber!!
-                tv_review_title.text = reviews.lastOrNull()?.review
+                rb_rating.rating = reviews.firstOrNull()?.ratingNumber!!
+                tv_review_title.text = reviews.firstOrNull()?.review
                 tv_review_sender.text = sender
                 tv_review_number.text = reviewNumber
                 setProfileAvatar(avatarUrl)
@@ -75,5 +84,6 @@ class ProfileFragment : Fragment() {
         adapter.submitList(portfolio)
         recycler_view.adapter = adapter
     }
+
 
 }

@@ -34,16 +34,33 @@ class ProfileViewModel : ViewModel() {
             ),
             reviews = arrayListOf(
                 Review(
-                    id = "1",
-                    name = "Derrick Austin",
-                    review = "nice one",
-                    ratingNumber = 4f
+                    id = "4",
+                    name = "Kyle Wilson",
+                    review = "Awesome job!",
+                    ratingNumber = 4.2f,
+                    timestamp = "05/03/2020"
+
+                ),
+                Review(
+                    id = "3",
+                    name = "Rosemary Copler",
+                    review = "Alex is a very great designer, having a lot of positive energy with him!",
+                    ratingNumber = 5f,
+                    timestamp = "02/03/2020"
                 ),
                 Review(
                     id = "2",
-                    name = "Kyle Wilson",
-                    review = "Awesome job!",
-                    ratingNumber = 4.2f
+                    name = "Soham Pena",
+                    review = "Alex is a very great designer, having a lot of positive energy with him!",
+                    ratingNumber = 5f,
+                    timestamp = "17/02/2020"
+                ),
+                Review(
+                    id = "1",
+                    name = "Calvin Watson",
+                    review = "I recommend Alex. Always impress by his work and his speed!",
+                    ratingNumber = 5f,
+                    timestamp = "19/01/2020"
                 )
             )
 

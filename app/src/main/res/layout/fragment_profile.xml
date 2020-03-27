@@ -108,13 +108,13 @@
 
         <RatingBar
             android:id="@+id/rb_rating"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:numStars="5"
             android:padding="5dp"
             style="?android:attr/ratingBarStyleSmall"
             android:layout_marginTop="4dp"
-            android:layout_marginEnd="24dp"
+            android:layout_marginEnd="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/tv_average_rating"
             app:layout_constraintTop_toBottomOf="@id/tv_average_rating" />

@@ -14,7 +14,8 @@ data class Review(
     val id: String,
     val name: String,
     val review: String,
-    val ratingNumber: Float
+    val ratingNumber: Float,
+    val timestamp:String
 )
 
 data class Portfolio(
