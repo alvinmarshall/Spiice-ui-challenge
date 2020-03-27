@@ -23,5 +23,14 @@
         android:id="@+id/profileFragment"
         android:name="com.cheise_proj.spiice_ui_challenge.spiice.ui.profile.ProfileFragment"
         android:label="@string/title_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_profileReviewsFragment"
+            app:destination="@id/profileReviewsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileReviewsFragment"
+        android:name="com.cheise_proj.spiice_ui_challenge.spiice.ui.profile.ProfileReviewsFragment"
+        android:label="Reviews"
+        tools:layout="@layout/fragment_profile_reviews" />
 </navigation>

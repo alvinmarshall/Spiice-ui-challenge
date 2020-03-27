@@ -51,5 +51,8 @@
     <string name="label_last_review">Last review:</string>
     <string name="label_portfolio">Portfolio</string>
 
+    <!--    REVIEWS-->
+    <string name="label_rating">Rating</string>
+
 
 </resources>

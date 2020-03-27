@@ -35,12 +35,12 @@ class MessageAdapter :
                 tv_message.text = item?.content
                 GlideApp.with(context).load(item?.user?.avatarUrl).circleCrop().into(item_img)
             }
-            setEvenCardsBackground(position)
+            setOddCardsBackground(position)
 
         }
 
-        private fun setEvenCardsBackground(position: Int) {
-            if (position % 2 == 0) {
+        private fun setOddCardsBackground(position: Int) {
+            if (position % 2 != 0) {
                 itemView.setBackgroundColor(
                     ContextCompat.getColor(
                         itemView.context,

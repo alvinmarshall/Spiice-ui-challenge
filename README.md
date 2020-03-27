@@ -12,6 +12,7 @@ Check their twitter handle https://twitter.com/ardejob
 * [ ] Search Page
 * [x] Messages Page
 * [x] Profile Page
+    * [x] Profile Reviews
 
 
 ## App Screens
