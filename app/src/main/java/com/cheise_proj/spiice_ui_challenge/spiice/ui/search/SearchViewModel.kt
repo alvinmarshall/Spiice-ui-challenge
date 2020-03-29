@@ -37,9 +37,9 @@ class SearchViewModel : ViewModel() {
                     avatarUrl = "https://randomuser.me/api/portraits/med/men/52.jpg"
                 ),
                 content = "Create Spiice application now in React-Native from the shared link design, all asset are provided.",
-                amount = "$ 2400",
+                amount = "$ 6500",
                 header = "React Native",
-                proposition = 16,
+                proposition = 5,
                 skills = arrayListOf("REDUX", "FIREBASE", "JAVASCRIPT"),
                 title = "Mobile Development"
             )

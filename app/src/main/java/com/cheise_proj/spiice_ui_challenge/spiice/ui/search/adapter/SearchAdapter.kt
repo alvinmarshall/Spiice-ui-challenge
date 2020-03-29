@@ -36,6 +36,7 @@ class SearchAdapter :
                 tv_sub_head.text = item?.title
                 tv_timestamp.text = item?.timestamp
                 tv_name.text = item?.user?.name
+                tv_content.text = item?.content
                 tv_propositions.text = proposition
                 tv_amount.text = item?.amount
 
