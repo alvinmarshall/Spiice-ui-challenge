@@ -8,4 +8,5 @@
     <color name="colorSecondaryColor">#FBEAFF</color>
     <color name="color_layout_background">#FAF9FE</color>
     <color name="card_module_background">#FAF9FE</color>
+    <color name="color_chip_text">#99879D</color>
 </resources>

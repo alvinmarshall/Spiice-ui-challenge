@@ -54,5 +54,11 @@
     <!--    REVIEWS-->
     <string name="label_rating">Rating</string>
 
+    <!--    SEARCH-->
+    <string-array name="array_filters">
+        <item>Filters</item>
+        <item>Filters 2</item>
+        <item>Filters 3</item>
+    </string-array>
 
 </resources>

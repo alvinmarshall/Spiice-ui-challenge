@@ -9,7 +9,7 @@ Check their twitter handle https://twitter.com/ardejob
 * [x] SignIn Page
 * [x] SignUp Page
 * [x] Feed Page
-* [ ] Search Page
+* [x] Search Page
 * [x] Messages Page
 * [x] Profile Page
     * [x] Profile Reviews
@@ -26,10 +26,10 @@ Sign In Page             |  Sign Up
 ![screenshot](./images/sign_in.jpg)  |  ![screenshot](./images/sign_up.jpg)
 
 
-Feed Page             |  Messages 
+Feed Page             |  Search Page 
 :-------------------------:|:-------------------------:
-![screenshot](./images/feed.jpg)  |  ![screenshot](./images/messages.jpg)
+![screenshot](./images/feed.jpg)  |  ![screenshot](./images/search.jpg)
 
-Profile Page             |  Search
+  Message         |  Profile Page  
 :-------------------------:|:-------------------------:
-![screenshot](./images/profile.jpg)  |  Not Ready
+![screenshot](./images/messages.jpg)  |  ![screenshot](./images/profile.jpg)

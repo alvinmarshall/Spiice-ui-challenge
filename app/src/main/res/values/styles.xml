@@ -20,4 +20,23 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <!--    TEXT VIEW HEADER STYLE-->
+    <style name="spiiceHeaderTextStyle" parent="android:Widget.TextView">
+        <item name="android:textSize">@dimen/spiice_header_size</item>
+        <item name="android:textColor">@color/color_text_black</item>
+        <item name="android:textStyle">bold</item>
+
+    </style>
+
+    <!--    TEXT VIEW SUB-HEADER STYLE-->
+    <style name="spiiceSubHeadTextStyle" parent="android:Widget.TextView">
+        <item name="android:textSize">@dimen/spiice_sub_head_size</item>
+        <item name="android:textColor">@color/color_text_black</item>
+
+    </style>
+
+    <style name="SpinnerTheme" parent="android:Widget.Spinner">
+        <item name="android:background">@drawable/bg_spinner</item>
+    </style>
+
 </resources>

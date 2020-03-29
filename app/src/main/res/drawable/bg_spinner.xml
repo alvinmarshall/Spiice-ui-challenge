@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <layer-list>
+            <item android:drawable="@drawable/ic_filter_list_black_24dp"  android:gravity="start|center_horizontal"   android:end="@dimen/margin_large" />
+        </layer-list>
+    </item>
+</selector>
