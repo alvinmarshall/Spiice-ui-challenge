@@ -10,18 +10,20 @@ Check their twitter handle https://twitter.com/ardejob
 * [x] SignUp Page
 * [x] Feed Page
 * [x] Search Page
+  * [x] Post Detail Page
+  * [x] Proposition Page
 * [x] Messages Page
 * [x] Profile Page
     * [x] Profile Reviews
 
 
 ## App Screens
-Starter Page             |  OnBoarding
+Starter Page             |  OnBoarding Page
 :-------------------------:|:-------------------------:
 ![screenshot](./images/starter.jpg)  |  ![screenshot](./images/on_board.jpg)
 
 
-Sign In Page             |  Sign Up
+Sign In Page             |  Sign Up Page
 :-------------------------:|:-------------------------:
 ![screenshot](./images/sign_in.jpg)  |  ![screenshot](./images/sign_up.jpg)
 
@@ -30,6 +32,15 @@ Feed Page             |  Search Page
 :-------------------------:|:-------------------------:
 ![screenshot](./images/feed.jpg)  |  ![screenshot](./images/search.jpg)
 
-  Message         |  Profile Page  
+  Messages Page         |  Profile Page  
 :-------------------------:|:-------------------------:
 ![screenshot](./images/messages.jpg)  |  ![screenshot](./images/profile.jpg)
+
+
+  Post Page        |  Proposition Page  
+:-------------------------:|:-------------------------:
+![screenshot](./images/post.jpg)  |  ![screenshot](./images/proposition.jpg)
+
+  Reviews Page        |    
+:-------------------------:|:-------------------------:
+![screenshot](./images/reviews.jpg)  | 
