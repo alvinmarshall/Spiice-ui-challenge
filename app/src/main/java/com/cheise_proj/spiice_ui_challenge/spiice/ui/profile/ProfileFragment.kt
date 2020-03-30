@@ -49,6 +49,7 @@ class ProfileFragment : Fragment() {
         recycler_view.apply {
             layoutManager = GridLayoutManager(context, 2)
             hasFixedSize()
+            isNestedScrollingEnabled = false
             this.adapter = adapter
         }
     }

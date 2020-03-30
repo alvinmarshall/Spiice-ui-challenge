@@ -53,6 +53,10 @@
 
     <!--    REVIEWS-->
     <string name="label_rating">Rating</string>
+    <string name="btn_label_send">Send</string>
+    <string name="label_hint_message">Message</string>
+    <string name="label_make_proposition">Make a proposition</string>
+    <string name="label_make_a_proposition">Make a proposition</string>
 
     <!--    SEARCH-->
     <string-array name="array_filters">
