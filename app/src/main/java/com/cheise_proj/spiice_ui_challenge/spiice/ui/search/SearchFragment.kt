@@ -7,9 +7,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.cheise_proj.spiice_ui_challenge.R
+import com.cheise_proj.spiice_ui_challenge.common.ItemClickListener
 import com.cheise_proj.spiice_ui_challenge.spiice.ui.search.adapter.SearchAdapter
 import kotlinx.android.synthetic.main.fragment_search.*
 
@@ -35,12 +37,14 @@ class SearchFragment : Fragment() {
     }
 
     private fun initRecyclerView() {
-        adapter = SearchAdapter()
+        adapter = SearchAdapter().apply {
+            setClickCallback(callback)
+        }
         recycler_view.apply {
             hasFixedSize()
             layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
             this.adapter = adapter
-            isNestedScrollingEnabled=false
+            isNestedScrollingEnabled = false
         }
     }
 
@@ -56,6 +60,14 @@ class SearchFragment : Fragment() {
             recycler_view.adapter = adapter
 
         })
+
+    }
+
+    private val callback = object : ItemClickListener<String> {
+        override fun data(t: String) {
+            val action = SearchFragmentDirections.actionSearchFragmentToPostDetailFragment(t)
+            findNavController().navigate(action)
+        }
 
     }
 
