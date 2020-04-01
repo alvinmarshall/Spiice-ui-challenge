@@ -1,3 +1,4 @@
 rootProject.name='Spiice-ui-challenge'
 include ':app'
 include ':domain'
+include ':data'
