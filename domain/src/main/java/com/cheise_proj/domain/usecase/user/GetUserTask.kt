@@ -28,7 +28,7 @@ class GetUserTask @Inject constructor(
     ObservableUseCase<GetUserTask.Params, UserEntity>(backgroundScheduler, foregroundScheduler) {
     inner class Params(val email: String, val password: String)
 
-    override fun generateSingle(input: Params?): Observable<UserEntity> {
+    override fun generateObservable(input: Params?): Observable<UserEntity> {
         if (input == null) throw IllegalArgumentException("authentication params can't be null")
         with(input) {
             return userRepository.getAuthUser(email, password)

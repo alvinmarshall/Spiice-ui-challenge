@@ -23,7 +23,7 @@ class GetPostsTask @Inject constructor(
     @Background backgroundScheduler: Scheduler,
     @Foreground foregroundScheduler: Scheduler
 ) : ObservableUseCase<Nothing, List<PostEntity>>(backgroundScheduler, foregroundScheduler) {
-    override fun generateSingle(input: Nothing?): Observable<List<PostEntity>> {
+    override fun generateObservable(input: Nothing?): Observable<List<PostEntity>> {
         return postRepository.getPosts()
     }
 }

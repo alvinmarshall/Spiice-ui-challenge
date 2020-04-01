@@ -4,8 +4,6 @@ import com.cheise_proj.domain.repository.UserRepository
 import io.reactivex.Observable
 import io.reactivex.schedulers.Schedulers
 import org.junit.Before
-
-import org.junit.Assert.*
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.JUnit4

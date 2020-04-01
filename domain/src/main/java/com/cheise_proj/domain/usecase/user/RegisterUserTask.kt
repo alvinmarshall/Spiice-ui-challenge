@@ -28,7 +28,7 @@ class RegisterUserTask @Inject constructor(
     ObservableUseCase<RegisterUserTask.Params, Boolean>(backgroundScheduler, foregroundScheduler) {
     inner class Params(val name: String, val email: String, val password: String)
 
-    override fun generateSingle(input: Params?): Observable<Boolean> {
+    override fun generateObservable(input: Params?): Observable<Boolean> {
         if (input == null) throw IllegalArgumentException("register params can't be null")
         with(input) {
             return userRepository.registerNewUser(name, email, password)

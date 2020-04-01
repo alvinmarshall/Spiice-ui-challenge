@@ -19,7 +19,7 @@ abstract class ObservableUseCase<in Params, T>(
     foregroundScheduler: Scheduler
 ) :
     BaseUseCase(backgroundScheduler, foregroundScheduler) {
-    protected abstract fun generateSingle(input: Params?): Observable<T>
+    protected abstract fun generateObservable(input: Params?): Observable<T>
 
     /**
      * buildUseCase subscribes to the observable type
@@ -27,7 +27,7 @@ abstract class ObservableUseCase<in Params, T>(
      * @param input
      * @return
      */
-    fun buildUseCase(input: Params? = null): Observable<T> = generateSingle(input)
+    fun buildUseCase(input: Params? = null): Observable<T> = generateObservable(input)
         .subscribeOn(backgroundScheduler)
         .observeOn(foregroundScheduler)
 

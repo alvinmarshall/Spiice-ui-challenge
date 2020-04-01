@@ -26,7 +26,7 @@ class GetUserProfileTask @Inject constructor(
     @Foreground foregroundScheduler: Scheduler
 ) :
     ObservableUseCase<Nothing, ProfileEntity>(backgroundScheduler, foregroundScheduler) {
-    override fun generateSingle(input: Nothing?): Observable<ProfileEntity> {
+    override fun generateObservable(input: Nothing?): Observable<ProfileEntity> {
         return userRepository.getUserProfile()
     }
 }
