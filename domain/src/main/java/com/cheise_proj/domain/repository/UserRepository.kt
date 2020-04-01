@@ -1,7 +1,7 @@
 package com.cheise_proj.domain.repository
 
-import com.cheise_proj.domain.entities.ProfileEntity
-import com.cheise_proj.domain.entities.UserEntity
+import com.cheise_proj.domain.entities.user.ProfileEntity
+import com.cheise_proj.domain.entities.user.UserEntity
 import io.reactivex.Observable
 
 interface UserRepository {

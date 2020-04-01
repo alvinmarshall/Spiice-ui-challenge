@@ -1,4 +1,4 @@
-package com.cheise_proj.domain.entities
+package com.cheise_proj.domain.entities.user
 
 data class ProfileEntity(
     val jobTitle: String,

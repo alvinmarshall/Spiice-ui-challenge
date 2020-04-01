@@ -1,6 +1,6 @@
 package com.cheise_proj.domain.usecase.user
 
-import com.cheise_proj.domain.entities.UserEntity
+import com.cheise_proj.domain.entities.user.UserEntity
 import com.cheise_proj.domain.repository.UserRepository
 import com.cheise_proj.domain.rx.ObservableUseCase
 import com.cheise_proj.domain.rx.qualifier.Background

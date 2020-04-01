@@ -1,9 +1,9 @@
 package utils
 
-import com.cheise_proj.domain.entities.Portfolio
-import com.cheise_proj.domain.entities.ProfileEntity
-import com.cheise_proj.domain.entities.Reviews
-import com.cheise_proj.domain.entities.UserEntity
+import com.cheise_proj.domain.entities.user.Portfolio
+import com.cheise_proj.domain.entities.user.ProfileEntity
+import com.cheise_proj.domain.entities.user.Reviews
+import com.cheise_proj.domain.entities.user.UserEntity
 
 object TestUserGenerator {
     fun getUser(): UserEntity {
