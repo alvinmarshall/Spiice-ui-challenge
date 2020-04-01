@@ -21,4 +21,13 @@ interface UserRepository {
      * @return Observable<ProfileEntity>
      */
     fun getUserProfile(): Observable<ProfileEntity>
+
+    /**
+     * Register a NewUser
+     *
+     * @param name user first + last name
+     * @param email user email address
+     * @param password user password
+     */
+    fun registerNewUser(name: String, email: String, password: String): Observable<Boolean>
 }

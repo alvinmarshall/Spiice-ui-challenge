@@ -13,6 +13,8 @@ import javax.inject.Inject
 /**
  * The GetUserTask authenticate the user and get their profile data
  *
+ * class implements ObservableUseCase class
+ *
  * @constructor
  *
  * @param backgroundScheduler provide RxJava background Schedulers
