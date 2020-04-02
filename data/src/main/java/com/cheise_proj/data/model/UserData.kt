@@ -6,7 +6,9 @@ data class UserData(
     val email: String,
     val avatarUrl: String,
     val userId: String,
-    val name: String
+    val name: String,
+    var accessToken: String,
+    var refreshToken: String
 ) {
    companion object{
        fun userMapper(): UserDataEntityMapper {

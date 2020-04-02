@@ -3,6 +3,7 @@ package com.cheise_proj.data.mapper.user
 import com.cheise_proj.data.mapper.IDataListMapper
 import com.cheise_proj.data.mapper.IDataMapper
 import com.cheise_proj.data.model.ReviewsData
+import com.cheise_proj.data.model.UserData.Companion.userMapper
 import com.cheise_proj.domain.entities.user.Reviews
 
 class ReviewDataEntityMapper : IDataMapper<ReviewsData, Reviews>,
@@ -11,7 +12,9 @@ class ReviewDataEntityMapper : IDataMapper<ReviewsData, Reviews>,
         return Reviews(
             content = data.content,
             timestamp = data.timestamp,
-            rating = data.rating
+            rating = data.rating,
+            id = data.id,
+            sender = userMapper().dataToEntity(data.sender)
         )
     }
 
@@ -19,7 +22,9 @@ class ReviewDataEntityMapper : IDataMapper<ReviewsData, Reviews>,
         return ReviewsData(
             content = entity.content,
             timestamp = entity.timestamp,
-            rating = entity.rating
+            rating = entity.rating,
+            id = entity.id,
+            sender = userMapper().entityToData(entity.sender)
         )
     }
 

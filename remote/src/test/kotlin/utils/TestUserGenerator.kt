@@ -1,17 +1,27 @@
 package utils
 
-import com.cheise_proj.data.model.PortfolioData
-import com.cheise_proj.data.model.ProfileData
-import com.cheise_proj.data.model.ReviewsData
-import com.cheise_proj.data.model.UserData
-import com.cheise_proj.domain.entities.user.Portfolio
-import com.cheise_proj.domain.entities.user.ProfileEntity
-import com.cheise_proj.domain.entities.user.Reviews
-import com.cheise_proj.domain.entities.user.UserEntity
+import com.cheise_proj.remote.model.user.*
 
 object TestUserGenerator {
-    fun getUser(): UserData {
-        return UserData(
+    fun getProfileDto(): ProfileDto {
+        return ProfileDto(
+            profileRemote = getProfile(),
+            status = 200
+        )
+    }
+
+    fun getUserDto(): UserDto {
+        return UserDto(
+            message = "login success",
+            status = 200,
+            refreshToken = "test refresh",
+            user = getUser(),
+            token = "test token"
+        )
+    }
+
+    private fun getUser(): UserRemote {
+        return UserRemote(
             email = "test email",
             avatarUrl = "http://testavatar",
             name = "test user name",
@@ -21,13 +31,13 @@ object TestUserGenerator {
         )
     }
 
-    fun getProfile(): ProfileData {
-        return ProfileData(
+    private fun getProfile(): ProfileRemote {
+        return ProfileRemote(
             jobTitle = "test job title",
             description = "test description",
             user = getUser(),
             reviews = arrayListOf(
-                ReviewsData(
+                ReviewRemote(
                     content = "test content",
                     timestamp = "2020-03-31T15:45:28.627Z",
                     rating = 4f,
@@ -36,7 +46,7 @@ object TestUserGenerator {
                 )
             ),
             portfolio = arrayListOf(
-                PortfolioData(
+                PortfolioRemote(
                     screenShotUrl = "http://testscreenshot"
                 )
             )

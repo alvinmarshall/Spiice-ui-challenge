@@ -1,5 +1,7 @@
 package com.cheise_proj.data.repository
 
+import com.cheise_proj.data.isFailure
+import com.cheise_proj.data.isSuccess
 import com.cheise_proj.data.model.ProfileData
 import com.cheise_proj.data.model.ProfileData.Companion.profileMapper
 import com.cheise_proj.data.model.UserData
@@ -40,6 +42,10 @@ class UserRepositoryImpl @Inject constructor(
         email: String,
         password: String
     ): Observable<Boolean> {
-        return userRemote.registerUser(name, email, password)
+        return userRemote.registerUser(name, email, password).map { t: UserData ->
+            if (t.accessToken.isBlank()) return@map isFailure
+            userLocal.saveUser(t)
+            return@map isSuccess
+        }
     }
 }

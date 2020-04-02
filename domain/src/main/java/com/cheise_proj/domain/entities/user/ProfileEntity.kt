@@ -13,8 +13,10 @@ data class Portfolio(
 )
 
 data class Reviews(
+    val id:String,
     val content: String,
     val rating: Float,
-    val timestamp: String
+    val timestamp: String,
+    val sender:UserEntity
 )
 

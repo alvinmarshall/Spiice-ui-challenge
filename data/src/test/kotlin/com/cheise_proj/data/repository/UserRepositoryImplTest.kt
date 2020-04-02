@@ -17,7 +17,6 @@ import utils.TestUserGenerator
 @RunWith(JUnit4::class)
 class UserRepositoryImplTest {
     companion object {
-        private const val isSuccess = true
         private const val name = "first + last name"
         private const val email = "email address"
         private const val password = "secure password"
@@ -39,7 +38,7 @@ class UserRepositoryImplTest {
 
     @Test
     fun `Register User Remotely Success`() {
-        val actual = isSuccess
+        val actual = TestUserGenerator.getUser()
         Mockito.`when`(userRemoteSource.registerUser(name, email, password))
             .thenReturn(Observable.just(actual))
         userRepositoryImpl.registerNewUser(name, email, password)

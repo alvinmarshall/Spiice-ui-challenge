@@ -16,7 +16,9 @@ class UserDataEntityMapper :
             email = data.email,
             userId = data.userId,
             name = data.name,
-            avatarUrl = data.avatarUrl
+            avatarUrl = data.avatarUrl,
+            accessToken = data.accessToken,
+            refreshToken = data.refreshToken
         )
     }
 
@@ -25,7 +27,9 @@ class UserDataEntityMapper :
             email = entity.email,
             avatarUrl = entity.avatarUrl,
             name = entity.name,
-            userId = entity.userId
+            userId = entity.userId,
+            refreshToken = entity.refreshToken,
+            accessToken = entity.accessToken
         )
     }
 }

@@ -11,7 +11,9 @@ object TestUserGenerator {
             email = "test email",
             avatarUrl = "http://testavatar",
             name = "test user name",
-            userId = "test uid"
+            userId = "test uid",
+            accessToken = "test access token",
+            refreshToken = "test refresh token"
         )
     }
 
@@ -24,7 +26,9 @@ object TestUserGenerator {
                 Reviews(
                     content = "test content",
                     timestamp = "2020-03-31T15:45:28.627Z",
-                    rating = 4f
+                    rating = 4f,
+                    id = "test uid",
+                    sender = getUser()
                 )
             ),
             portfolio = arrayListOf(

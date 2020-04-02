@@ -7,5 +7,5 @@ import io.reactivex.Observable
 interface UserRemoteSource {
     fun fetchUserProfile(): Observable<ProfileData>
     fun fetchAuthUser(email: String, password: String): Observable<UserData>
-    fun registerUser(name: String, email: String, password: String): Observable<Boolean>
+    fun registerUser(name: String, email: String, password: String): Observable<UserData>
 }

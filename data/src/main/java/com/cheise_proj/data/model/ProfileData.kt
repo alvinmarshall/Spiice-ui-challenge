@@ -27,8 +27,10 @@ data class PortfolioData(
 )
 
 data class ReviewsData(
+    val id:String,
     val content: String,
     val rating: Float,
-    val timestamp: String
+    val timestamp: String,
+    val sender:UserData
 )
 
