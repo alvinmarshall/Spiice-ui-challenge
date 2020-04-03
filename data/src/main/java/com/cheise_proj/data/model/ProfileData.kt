@@ -8,7 +8,7 @@ data class ProfileData(
     val jobTitle: String,
     val description: String,
     val portfolio: List<PortfolioData>,
-    val reviews: List<ReviewsData>,
+    var reviews: List<ReviewsData>,
     val user: UserData
 ) {
     companion object {
