@@ -37,12 +37,9 @@
     <string name="label_resume">Resume</string>
     <string name="label_active_projects">Active projects</string>
     <string name="label_view_all">View all</string>
-    <string name="label_wireframes">Wireframes</string>
-    <string name="label_francisco_fisher">Francisco Fisher</string>
-    <string name="label_active">Active</string>
-    <string name="label_need_a_new_logo">Need a new logo</string>
     <string name="label_amel_rio">Amel Rio</string>
     <string name="label_pending">Pending</string>
+    <string name="label_own_project">You are in charge of this project</string>
 
 
     <!--    PROFILE-->
@@ -57,6 +54,9 @@
     <string name="label_hint_message">Message</string>
     <string name="label_make_proposition">Make a proposition</string>
     <string name="label_make_a_proposition">Make a proposition</string>
+    <string name="btn_label_send_work">send your work</string>
+    <string name="label_send_your_work">Send your work</string>
+    <string name="label_upload_file">Upload file</string>
 
     <!--    SEARCH-->
     <string-array name="array_filters">

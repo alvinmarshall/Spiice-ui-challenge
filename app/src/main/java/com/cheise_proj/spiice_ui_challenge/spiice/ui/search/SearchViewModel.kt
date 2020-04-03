@@ -26,7 +26,8 @@ class SearchViewModel : ViewModel() {
                 header = "Create an application",
                 proposition = 16,
                 skills = arrayListOf("UX/UI", "DESIGN", "FIGMA", "PHOTOSHOP"),
-                title = "Description"
+                title = "Description",
+                elapseTime = "08/05/2020"
             ),
 
             Post(
@@ -43,8 +44,27 @@ class SearchViewModel : ViewModel() {
                 header = "React Native",
                 proposition = 5,
                 skills = arrayListOf("REDUX", "FIREBASE", "JAVASCRIPT"),
-                title = "Mobile Development"
+                title = "Mobile Development",
+                elapseTime = "02/04/2020"
+            ),
+            Post(
+                id = "3",
+                timestamp = "Posted 8 days ago",
+                user = User(
+                    id = "3",
+                    email = "",
+                    name = "Francisco Fisher",
+                    avatarUrl = "https://randomuser.me/api/portraits/med/men/85.jpg"
+                ),
+                content = "I need a designer for my new website The project is just at the beginning and I need wireframes before I start coding the website. I only want wireframes and I don’t want prototype or UI design.",
+                amount = "$ 600",
+                header = "Wireframes",
+                proposition = 5,
+                skills = arrayListOf("WIREFRAME"),
+                title = "Description",
+                elapseTime = "28/03/2020"
             )
+
 
         )
 

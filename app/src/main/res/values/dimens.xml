@@ -11,7 +11,7 @@
     <dimen name="margin_large">24dp</dimen>
 
     <dimen name="text_medium">18sp</dimen>
-    <dimen name="btn_radius_20dp">20dp</dimen>
+    <dimen name="btn_radius_size">22dp</dimen>
     <dimen name="spiice_header_size">25sp</dimen>
     <dimen name="spiice_sub_head_size">20sp</dimen>
     <dimen name="spiice_text_size_16">16sp</dimen>
