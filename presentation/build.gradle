@@ -1,0 +1,73 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+
+    defaultConfig {
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode rootProject.versionCode
+        versionName rootProject.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "androidx.appcompat:appcompat:$rootProject.appcompatVersion"
+    implementation "androidx.core:core-ktx:$rootProject.ktxVersion"
+
+    //Testing
+    testImplementation "junit:junit:$rootProject.junitVersion"
+    androidTestImplementation "junit:junit:$rootProject.junitVersion"
+    testImplementation "org.mockito:mockito-core:$rootProject.mockito_version"
+    testImplementation "androidx.arch.core:core-testing:$rootProject.archCoreTestVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.expresso_version"
+    androidTestImplementation "androidx.test:runner:$rootProject.testRulesVersion"
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+
+
+    //inject
+    implementation "javax.inject:javax.inject:$rootProject.javaxInjectVersion"
+
+    //Rx
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.rx_version"
+
+    //lifecycle
+    kapt "androidx.lifecycle:lifecycle-common-java8:$rootProject.lifecyle_version"
+    implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.lifecyle_version"
+    implementation "androidx.lifecycle:lifecycle-reactivestreams-ktx:$rootProject.lifecyle_version"
+
+    //work manager
+    implementation "androidx.work:work-runtime-ktx:$rootProject.worker_version"
+    implementation "androidx.work:work-rxjava2:$rootProject.worker_version"
+
+    //glide
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    kapt "com.github.bumptech.glide:compiler:$glide_version"
+
+    //Timber
+    implementation "com.jakewharton.timber:timber:$timber_version"
+
+    implementation project(path: ':domain')
+}

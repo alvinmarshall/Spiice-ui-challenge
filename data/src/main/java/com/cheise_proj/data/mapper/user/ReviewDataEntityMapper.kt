@@ -4,12 +4,12 @@ import com.cheise_proj.data.mapper.IDataListMapper
 import com.cheise_proj.data.mapper.IDataMapper
 import com.cheise_proj.data.model.ReviewsData
 import com.cheise_proj.data.model.UserData.Companion.userMapper
-import com.cheise_proj.domain.entities.user.Reviews
+import com.cheise_proj.domain.entities.user.ReviewsEntity
 
-class ReviewDataEntityMapper : IDataMapper<ReviewsData, Reviews>,
-    IDataListMapper<ReviewsData, Reviews> {
-    override fun dataToEntity(data: ReviewsData): Reviews {
-        return Reviews(
+class ReviewDataEntityMapper : IDataMapper<ReviewsData, ReviewsEntity>,
+    IDataListMapper<ReviewsData, ReviewsEntity> {
+    override fun dataToEntity(data: ReviewsData): ReviewsEntity {
+        return ReviewsEntity(
             content = data.content,
             timestamp = data.timestamp,
             rating = data.rating,
@@ -18,7 +18,7 @@ class ReviewDataEntityMapper : IDataMapper<ReviewsData, Reviews>,
         )
     }
 
-    override fun entityToData(entity: Reviews): ReviewsData {
+    override fun entityToData(entity: ReviewsEntity): ReviewsData {
         return ReviewsData(
             content = entity.content,
             timestamp = entity.timestamp,
@@ -28,13 +28,13 @@ class ReviewDataEntityMapper : IDataMapper<ReviewsData, Reviews>,
         )
     }
 
-    override fun dataListToEntity(dataList: List<ReviewsData>): List<Reviews> {
-        val entity = arrayListOf<Reviews>()
+    override fun dataListToEntity(dataList: List<ReviewsData>): List<ReviewsEntity> {
+        val entity = arrayListOf<ReviewsEntity>()
         dataList.forEach { data -> entity.add(dataToEntity(data)) }
         return entity
     }
 
-    override fun entityListToData(entityList: List<Reviews>): List<ReviewsData> {
+    override fun entityListToData(entityList: List<ReviewsEntity>): List<ReviewsData> {
         val data = arrayListOf<ReviewsData>()
         entityList.forEach { entity -> data.add(entityToData(entity)) }
         return data

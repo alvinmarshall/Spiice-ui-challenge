@@ -1,5 +1,6 @@
 package com.cheise_proj.domain.usecase.user
 
+import com.cheise_proj.domain.entities.user.UserEntity
 import com.cheise_proj.domain.repository.UserRepository
 import com.cheise_proj.domain.rx.ObservableUseCase
 import com.cheise_proj.domain.rx.qualifier.Background
@@ -25,10 +26,10 @@ class RegisterUserTask @Inject constructor(
     @Background backgroundScheduler: Scheduler,
     @Foreground foregroundScheduler: Scheduler
 ) :
-    ObservableUseCase<RegisterUserTask.Params, Boolean>(backgroundScheduler, foregroundScheduler) {
+    ObservableUseCase<RegisterUserTask.Params, UserEntity>(backgroundScheduler, foregroundScheduler) {
     inner class Params(val name: String, val email: String, val password: String)
 
-    override fun generateObservable(input: Params?): Observable<Boolean> {
+    override fun generateObservable(input: Params?): Observable<UserEntity> {
         if (input == null) throw IllegalArgumentException("register params can't be null")
         with(input) {
             return userRepository.registerNewUser(name, email, password)

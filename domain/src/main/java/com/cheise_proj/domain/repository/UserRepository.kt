@@ -29,5 +29,5 @@ interface UserRepository {
      * @param email user email address
      * @param password user password
      */
-    fun registerNewUser(name: String, email: String, password: String): Observable<Boolean>
+    fun registerNewUser(name: String, email: String, password: String): Observable<UserEntity>
 }

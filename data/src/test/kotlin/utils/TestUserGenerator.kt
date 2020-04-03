@@ -4,10 +4,6 @@ import com.cheise_proj.data.model.PortfolioData
 import com.cheise_proj.data.model.ProfileData
 import com.cheise_proj.data.model.ReviewsData
 import com.cheise_proj.data.model.UserData
-import com.cheise_proj.domain.entities.user.Portfolio
-import com.cheise_proj.domain.entities.user.ProfileEntity
-import com.cheise_proj.domain.entities.user.Reviews
-import com.cheise_proj.domain.entities.user.UserEntity
 
 object TestUserGenerator {
     fun getUser(): UserData {

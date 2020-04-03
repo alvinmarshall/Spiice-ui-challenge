@@ -1,13 +1,14 @@
-package utils
+package com.cheise_proj.presentation.utils
 
-import com.cheise_proj.domain.entities.user.PortfolioEntity
-import com.cheise_proj.domain.entities.user.ProfileEntity
-import com.cheise_proj.domain.entities.user.ReviewsEntity
-import com.cheise_proj.domain.entities.user.UserEntity
+
+import com.cheise_proj.presentation.model.Portfolio
+import com.cheise_proj.presentation.model.Profile
+import com.cheise_proj.presentation.model.Reviews
+import com.cheise_proj.presentation.model.User
 
 object TestUserGenerator {
-    fun getUser(): UserEntity {
-        return UserEntity(
+    fun getUser(): User {
+        return User(
             email = "test email",
             avatarUrl = "http://testavatar",
             name = "test user name",
@@ -17,22 +18,22 @@ object TestUserGenerator {
         )
     }
 
-    fun getProfile(): ProfileEntity {
-        return ProfileEntity(
+    fun getProfile(): Profile {
+        return Profile(
             jobTitle = "test job title",
             description = "test description",
             user = getUser(),
             reviews = arrayListOf(
-                ReviewsEntity(
+                Reviews(
                     content = "test content",
                     timestamp = "2020-03-31T15:45:28.627Z",
                     rating = 4f,
-                    id = "test uid",
-                    sender = getUser()
+                    sender = getUser(),
+                    id = "test uid"
                 )
             ),
             portfolio = arrayListOf(
-                PortfolioEntity(
+                Portfolio(
                     screenShotUrl = "http://testscreenshot"
                 )
             )

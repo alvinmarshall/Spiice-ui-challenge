@@ -57,7 +57,7 @@ buildscript {
         mockkVersion = '1.9.3'
 
         // architecture component
-        worker_version = '2.3.2'
+        worker_version = '2.3.4'
         room_version = '2.2.5'
         rx_room_version = '1.1.1'
         archCoreTestVersion = '2.1.0'
@@ -69,7 +69,7 @@ buildscript {
         firebase_msg_version = '20.1.1'
 
         //retrofit version
-        retrofit_version = '2.7.1'
+        retrofit_version = '2.8.1'
         rx_retrofit_adapter = '2.4.0'
 
         //json object
