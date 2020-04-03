@@ -58,7 +58,7 @@ buildscript {
 
         // architecture component
         worker_version = '2.3.2'
-        room_version = '2.2.4'
+        room_version = '2.2.5'
         rx_room_version = '1.1.1'
         archCoreTestVersion = '2.1.0'
         lifecyle_version = '2.2.0'
