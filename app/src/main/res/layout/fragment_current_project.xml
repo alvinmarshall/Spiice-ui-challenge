@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".spiice.ui.project.CurrentProjectFragment">
+
+    <LinearLayout
+        android:id="@+id/fl_bannder"
+        android:layout_width="match_parent"
+        android:layout_height="82dp"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical"
+        app:layout_anchorGravity="top">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:textSize="@dimen/spiice_text_size_16"
+            android:text="@string/label_own_project"
+            android:textAlignment="center"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/tv_elapse_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            tools:text="@tools:sample/date/mmddyy" />
+
+    </LinearLayout>
+
+    <include
+        layout="@layout/fragment_post_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+
+        />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

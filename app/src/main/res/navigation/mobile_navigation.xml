@@ -8,7 +8,14 @@
         android:id="@+id/feedFragment"
         android:name="com.cheise_proj.spiice_ui_challenge.spiice.ui.feed.FeedFragment"
         android:label="@string/title_feed"
-        tools:layout="@layout/fragment_feed" />
+        tools:layout="@layout/fragment_feed" >
+        <action
+            android:id="@+id/action_feedFragment_to_currentProjectFragment"
+            app:destination="@id/currentProjectFragment" />
+        <action
+            android:id="@+id/action_feedFragment_to_feedDetailFragment"
+            app:destination="@id/feedDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/messagesFragment"
         android:name="com.cheise_proj.spiice_ui_challenge.spiice.ui.messages.MessagesFragment"
@@ -61,5 +68,31 @@
         <action
             android:id="@+id/action_postDetailFragment_to_propositionFragment"
             app:destination="@id/propositionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/uploadWorkFragment"
+        android:name="com.cheise_proj.spiice_ui_challenge.spiice.ui.project.UploadWorkFragment"
+        android:label="Upload Work"
+        tools:layout="@layout/fragment_upload_work">
+        <argument
+            android:name="post_id"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/feedDetailFragment"
+        android:name="com.cheise_proj.spiice_ui_challenge.spiice.ui.feed.FeedDetailFragment"
+        android:label="fragment_feed_detail"
+        tools:layout="@layout/fragment_feed_detail" />
+    <fragment
+        android:id="@+id/currentProjectFragment"
+        android:name="com.cheise_proj.spiice_ui_challenge.spiice.ui.project.CurrentProjectFragment"
+        android:label="@string/label_active_projects"
+        tools:layout="@layout/fragment_current_project">
+        <action
+            android:id="@+id/action_currentProjectFragment_to_uploadWorkFragment"
+            app:destination="@id/uploadWorkFragment" />
+        <argument
+            android:name="project"
+            app:argType="com.cheise_proj.spiice_ui_challenge.spiice.model.Project" />
     </fragment>
 </navigation>

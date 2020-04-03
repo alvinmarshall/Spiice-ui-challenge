@@ -31,7 +31,7 @@
         android:text="@string/label_btn_starter"
         android:textAllCaps="false"
         android:textSize="@dimen/text_medium"
-        app:cornerRadius="@dimen/btn_radius_20dp"
+        app:cornerRadius="@dimen/btn_radius_size"
         app:layout_constraintBottom_toTopOf="@+id/tv_footer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"

@@ -67,4 +67,7 @@ dependencies {
     //glide
     implementation "com.github.bumptech.glide:glide:$glide_version"
     kapt "com.github.bumptech.glide:compiler:$glide_version"
+
+    // anko
+    implementation "org.jetbrains.anko:anko:$rootProject.anko_version"
 }

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".spiice.ui.project.UploadWorkFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_medium">
+
+        <ImageView
+            android:id="@+id/img_avatar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="@dimen/margin_large"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription"
+            tools:src="@tools:sample/backgrounds/scenic" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            style="@style/spiiceHeaderTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_small"
+            app:layout_constraintStart_toEndOf="@+id/img_avatar"
+            app:layout_constraintTop_toTopOf="@id/img_avatar"
+            tools:text="@tools:sample/full_names"
+
+            />
+
+        <TextView
+            android:id="@+id/tv_propositions"
+            style="@style/spiiceHeaderTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:text="@string/label_send_your_work"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/img_avatar" />
+
+        <EditText
+            android:id="@+id/et_content"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:background="@drawable/square_edit_text"
+            android:gravity="top"
+            android:hint="@string/label_hint_message"
+            android:inputType="textMultiLine"
+            android:padding="@dimen/padding_medium"
+            android:textDirection="firstStrongLtr"
+            app:layout_constraintTop_toBottomOf="@id/tv_propositions"
+            tools:ignore="Autofill" />
+
+        <LinearLayout
+            android:id="@+id/ll_item_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:background="@drawable/square_edit_text"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/et_content">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:padding="@dimen/padding_medium"
+                android:textSize="@dimen/spiice_text_size_16"
+                android:text="@string/label_upload_file" />
+
+            <TextView
+                android:id="@+id/btn_upload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:drawableEnd="@drawable/ic_upload_icon"
+                android:focusable="true"
+                android:padding="@dimen/padding_medium"
+
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_item_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:background="@drawable/white_curve_rectange_bg"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/ll_item_1">
+
+            <TextView
+                android:id="@+id/tv_file_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:padding="@dimen/padding_medium"
+                android:textSize="@dimen/spiice_text_size_16"
+                tools:text="wireframes.sketch" />
+
+            <TextView
+                android:id="@+id/btn_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:drawableEnd="@drawable/ic_cancel_icon"
+                android:focusable="true"
+                android:padding="@dimen/padding_medium"
+
+                />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_send"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="69dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="32dp"
+            android:padding="@dimen/margin_medium"
+            android:text="@string/btn_label_send"
+            android:textAllCaps="false"
+            app:cornerRadius="@dimen/btn_radius_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_item_2"
+
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

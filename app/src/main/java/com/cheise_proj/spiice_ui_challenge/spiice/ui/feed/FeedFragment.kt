@@ -1,14 +1,20 @@
 package com.cheise_proj.spiice_ui_challenge.spiice.ui.feed
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.cheise_proj.spiice_ui_challenge.R
+import com.cheise_proj.spiice_ui_challenge.common.ItemClickListener
+import com.cheise_proj.spiice_ui_challenge.spiice.model.Project
+import com.cheise_proj.spiice_ui_challenge.spiice.ui.feed.adapter.ProjectAdapter
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
@@ -19,6 +25,14 @@ import kotlinx.android.synthetic.main.fragment_feed.*
  */
 class FeedFragment : Fragment() {
     private lateinit var viewModel: FeedViewModel
+    private lateinit var adapter: ProjectAdapter
+    private val callBack = object : ItemClickListener<Project> {
+        override fun data(t: Project) {
+            val action = FeedFragmentDirections.actionFeedFragmentToCurrentProjectFragment(t)
+            findNavController().navigate(action)
+
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,7 +44,18 @@ class FeedFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        initRecyclerView()
         configViewModel()
+    }
+
+    private fun initRecyclerView() {
+        adapter = ProjectAdapter().apply {
+            setItemCallback(callBack)
+        }
+        recycler_view.apply {
+            setHasFixedSize(true)
+            layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+        }
     }
 
     private fun configViewModel() {
@@ -38,6 +63,10 @@ class FeedFragment : Fragment() {
         viewModel.getData.observe(viewLifecycleOwner, Observer { entries ->
             println(entries)
             initBarChart(entries)
+        })
+        viewModel.getProject.observe(viewLifecycleOwner, Observer { project ->
+            adapter.submitList(project)
+            recycler_view.adapter = adapter
         })
     }
 

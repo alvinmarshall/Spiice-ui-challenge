@@ -9,5 +9,6 @@ data class Post(
     val user: User,
     val skills: List<String>,
     val amount: String,
-    val proposition: Int
+    val proposition: Int,
+    val elapseTime:String
 )
