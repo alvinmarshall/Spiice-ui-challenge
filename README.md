@@ -9,6 +9,8 @@ Check their twitter handle https://twitter.com/ardejob
 * [x] SignIn Page
 * [x] SignUp Page
 * [x] Feed Page
+  * [x] Active Project
+  * [x] Upload Project
 * [x] Search Page
   * [x] Post Detail Page
   * [x] Proposition Page
@@ -41,6 +43,11 @@ Feed Page             |  Search Page
 :-------------------------:|:-------------------------:
 ![screenshot](./images/post.jpg)  |  ![screenshot](./images/proposition.jpg)
 
-  Reviews Page        |    
+  Reviews Page             |    Active Project
 :-------------------------:|:-------------------------:
-![screenshot](./images/reviews.jpg)  | 
+![screenshot](./images/reviews.jpg)  | ![screenshot](./images/active_project.jpg) 
+
+
+  Upload Work             |   
+:-------------------------:|
+![screenshot](./images/upload_work.jpg) 
