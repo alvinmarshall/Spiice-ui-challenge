@@ -6,9 +6,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.cheise_proj.presentation.model.Portfolio
 import com.cheise_proj.spiice_ui_challenge.R
 import com.cheise_proj.spiice_ui_challenge.common.GlideApp
-import com.cheise_proj.spiice_ui_challenge.spiice.model.Portfolio
 import kotlinx.android.synthetic.main.list_portfolio.view.*
 
 class PortfolioAdapter :
@@ -36,7 +36,7 @@ class PortfolioAdapter :
 
 class PortfolioDiff : DiffUtil.ItemCallback<Portfolio>() {
     override fun areItemsTheSame(oldItem: Portfolio, newItem: Portfolio): Boolean {
-        return oldItem.id == newItem.id
+        return oldItem.screenShotUrl == newItem.screenShotUrl
     }
 
     override fun areContentsTheSame(oldItem: Portfolio, newItem: Portfolio): Boolean {

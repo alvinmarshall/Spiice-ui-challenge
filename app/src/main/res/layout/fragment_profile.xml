@@ -9,8 +9,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:padding="@dimen/padding_medium"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_medium">
 
         <ImageView
             android:id="@+id/img_avatar"
@@ -41,11 +41,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/img_avatar"
             app:layout_constraintEnd_toEndOf="@id/tv_name"
             app:layout_constraintHorizontal_bias="0.02"
             app:layout_constraintStart_toStartOf="@id/tv_name"
             app:layout_constraintTop_toBottomOf="@id/tv_name"
-            app:layout_constraintBottom_toBottomOf="@id/img_avatar"
             tools:text="UX Designer" />
 
         <TextView
@@ -55,10 +55,10 @@
             android:layout_marginTop="28dp"
             android:padding="4dp"
             android:text="@string/label_description"
+            android:textAlignment="viewStart"
             android:textColor="@color/color_text_black"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textAlignment="viewStart"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/img_avatar" />
@@ -68,9 +68,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:maxLines="10"
-            android:textSize="16sp"
             android:padding="4dp"
             android:textAlignment="viewStart"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_description_header"
@@ -92,8 +92,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:textColor="@color/color_text_black"
             android:text="@string/label_average_rating"
+            android:textColor="@color/color_text_black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_description_body" />
 
@@ -108,13 +108,13 @@
 
         <RatingBar
             android:id="@+id/rb_rating"
+            style="?android:attr/ratingBarStyleSmall"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:numStars="5"
-            android:padding="5dp"
-            style="?android:attr/ratingBarStyleSmall"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="20dp"
+            android:numStars="5"
+            android:padding="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/tv_average_rating"
             app:layout_constraintTop_toBottomOf="@id/tv_average_rating" />
@@ -122,11 +122,15 @@
 
         <TextView
             android:id="@+id/tv_review_title"
-            android:layout_width="wrap_content"
+            android:layout_width="255dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:maxEms="16"
+            android:singleLine="true"
             android:textColor="@color/color_text_black"
             android:textSize="16sp"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_last_review"
             tools:text="Awesome job!" />
@@ -174,7 +178,20 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_portfolio"
             tools:itemCount="2"
-            tools:listitem="@layout/list_portfolio" />
+            tools:listitem="@layout/list_portfolio">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

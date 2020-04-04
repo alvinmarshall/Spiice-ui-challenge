@@ -18,8 +18,8 @@ class UserRemoteDataMapper :
             userId = remote.userId,
             name = remote.name,
             avatarUrl = remote.avatarUrl,
-            accessToken = remote.accessToken,
-            refreshToken = remote.refreshToken
+            accessToken = remote.accessToken?:"",
+            refreshToken = remote.refreshToken?:""
         )
     }
 
