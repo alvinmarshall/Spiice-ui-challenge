@@ -1,6 +1,7 @@
 package com.cheise_proj.remote.model.user
 
 import com.cheise_proj.remote.mapper.user.UserRemoteDataMapper
+import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 
@@ -18,8 +19,8 @@ data class UserRemote(
     val email: String,
     val name: String,
     val userId: String,
-    var accessToken:String,
-    var refreshToken: String
+    var accessToken:String?,
+    var refreshToken: String?
 
 ) {
     companion object {

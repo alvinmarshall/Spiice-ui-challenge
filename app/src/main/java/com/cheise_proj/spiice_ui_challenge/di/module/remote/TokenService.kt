@@ -14,10 +14,11 @@ class TokenService @Inject constructor(
 ) : Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
-        val token =
+        val tokenPref =
             sharedPreferences.getString(context.getString(R.string.pref_login_access_token_key), null)
                 ?: ""
         var request = chain.request()
+        val token = "Bearer $tokenPref"
         request = request.newBuilder().addHeader(AUTHORIZATION_HEADER, token).build()
         return chain.proceed(request)
     }

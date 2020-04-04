@@ -16,7 +16,7 @@ class ProfileRemoteDataMapper :
     override fun remoteToData(remote: ProfileRemote): ProfileData {
         return ProfileData(
             jobTitle = remote.jobTitle,
-            user = userMapper().remoteToData(remote.user),
+            user = userMapper().remoteToData(remote.user!!),
             description = remote.description,
             reviews = reviewMapper().remoteListToData(remote.reviews),
             portfolio = portfolioMapper().remoteListToData(remote.portfolio)
