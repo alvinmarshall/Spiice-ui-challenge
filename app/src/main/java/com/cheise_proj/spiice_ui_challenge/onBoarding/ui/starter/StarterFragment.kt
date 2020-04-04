@@ -9,6 +9,7 @@ import androidx.navigation.fragment.findNavController
 import com.cheise_proj.spiice_ui_challenge.R
 import com.cheise_proj.spiice_ui_challenge.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_starter.*
+import timber.log.Timber
 
 /**
  * A simple [Fragment] subclass.
@@ -26,6 +27,7 @@ class StarterFragment : BaseFragment() {
     override fun onStart() {
         super.onStart()
         if (prefs.getUserSession().isLogin) {
+            Timber.i("session: ${prefs.getUserSession()}")
             return navigateToFeed()
         }
     }
@@ -34,6 +36,7 @@ class StarterFragment : BaseFragment() {
         val action = StarterFragmentDirections.actionStarterFragmentToSpiiceNavActivity()
         findNavController().navigate(action)
         activity?.finish()
+        Timber.i("actionStarterFragmentToSpiiceNavActivity")
 
     }
 
@@ -42,10 +45,12 @@ class StarterFragment : BaseFragment() {
         tv_footer.setOnClickListener {
             val action = StarterFragmentDirections.actionStarterFragmentToSignInFragment()
             findNavController().navigate(action)
+            Timber.i("actionStarterFragmentToSignInFragment")
         }
         btn_discover.setOnClickListener {
             val action = StarterFragmentDirections.actionStarterFragmentToOnBoardingFragment()
             findNavController().navigate(action)
+            Timber.i("actionStarterFragmentToOnBoardingFragment")
         }
     }
 

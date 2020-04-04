@@ -61,7 +61,6 @@ class FeedFragment : Fragment() {
     private fun configViewModel() {
         viewModel = ViewModelProvider(this)[FeedViewModel::class.java]
         viewModel.getData.observe(viewLifecycleOwner, Observer { entries ->
-            println(entries)
             initBarChart(entries)
         })
         viewModel.getProject.observe(viewLifecycleOwner, Observer { project ->

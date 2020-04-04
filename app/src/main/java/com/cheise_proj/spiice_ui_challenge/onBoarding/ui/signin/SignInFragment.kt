@@ -16,6 +16,7 @@ import com.cheise_proj.spiice_ui_challenge.R
 import com.cheise_proj.spiice_ui_challenge.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_sign_in.*
 import org.jetbrains.anko.support.v4.toast
+import timber.log.Timber
 import javax.inject.Inject
 
 /**
@@ -43,6 +44,7 @@ class SignInFragment : BaseFragment() {
         tv_footer.setOnClickListener {
             val action = SignInFragmentDirections.actionSignInFragmentToSignUpFragment()
             findNavController().navigate(action)
+            Timber.i("actionSignInFragmentToSignUpFragment")
         }
 
         btn_sign_in.setOnClickListener {
@@ -73,10 +75,12 @@ class SignInFragment : BaseFragment() {
         viewModel.getAuthenticatedUser(email, password)
             .observe(viewLifecycleOwner, Observer { resource ->
                 when (resource.status) {
-                    STATUS.LOADING -> {}
+                    STATUS.LOADING -> {
+                        Timber.i("loading...")
+                    }
                     STATUS.SUCCESS -> {
                         hideProgress(progressBar)
-                        println("user- ${resource.data}")
+                        Timber.i("user- ${resource.data}")
                         with(resource.data) {
                             val session =
                                 UserSession(true, this?.email, this?.avatarUrl, this?.name)
@@ -88,7 +92,7 @@ class SignInFragment : BaseFragment() {
                     }
                     STATUS.ERROR -> {
                         hideProgress(progressBar)
-                        println("error ${resource.message}")
+                        Timber.i("error ${resource.message}")
                         toast("error: ${resource?.message}")
                     }
                 }
@@ -99,6 +103,7 @@ class SignInFragment : BaseFragment() {
         val action = SignInFragmentDirections.actionSignInFragmentToSpiiceNavActivity()
         findNavController().navigate(action)
         activity?.finish()
+        Timber.i("actionSignInFragmentToSpiiceNavActivity")
 
     }
 

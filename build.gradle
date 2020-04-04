@@ -66,6 +66,7 @@ buildscript {
 
         //firebase version
         firebase_version = '17.2.0'
+        firebaseCrash_version = '17.0.0-beta03'
         firebase_msg_version = '20.1.4'
 
         //retrofit version
@@ -103,6 +104,8 @@ buildscript {
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigation_version"
         classpath "org.jetbrains.dokka:dokka-gradle-plugin:${dokka_version}"
         classpath 'com.google.gms:google-services:4.3.3'
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.0.0-beta03'
+
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
