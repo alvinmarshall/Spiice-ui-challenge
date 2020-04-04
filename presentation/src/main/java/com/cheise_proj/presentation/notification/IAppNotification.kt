@@ -2,6 +2,6 @@ package com.cheise_proj.presentation.notification
 
 import android.content.Context
 
-interface ITeacherNotification {
+interface IAppNotification {
     fun initNotification(context: Context,title: String, message: String, destination: Int)
 }

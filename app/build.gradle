@@ -3,6 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'androidx.navigation.safeargs.kotlin'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
@@ -70,4 +71,40 @@ dependencies {
 
     // anko
     implementation "org.jetbrains.anko:anko:$rootProject.anko_version"
+
+    //dagger
+    implementation "com.google.dagger:dagger:$rootProject.dagger_version"
+    implementation "com.google.dagger:dagger-android:$rootProject.dagger_version"
+    implementation "com.google.dagger:dagger-android-support:$rootProject.dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$rootProject.dagger_version"
+    kapt "com.google.dagger:dagger-android-processor:$rootProject.dagger_version"
+
+    //Rx
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.rx_version"
+    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rx_android_version"
+    implementation "androidx.room:room-rxjava2:$rootProject.room_version"
+
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofit_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofit_version"
+
+
+    //Gson
+    implementation "com.google.code.gson:gson:$rootProject.gson_version"
+
+    //Preference
+    implementation "androidx.preference:preference-ktx:$rootProject.pref_version"
+
+    //work manager
+    implementation "androidx.work:work-runtime-ktx:$rootProject.worker_version"
+    implementation "androidx.work:work-rxjava2:$rootProject.worker_version"
+
+    //firebase messaging
+    implementation "com.google.firebase:firebase-messaging:$rootProject.firebase_msg_version"
+    implementation project(path: ':local')
+    implementation project(path: ':remote')
+    implementation project(path: ':domain')
+    implementation project(path: ':presentation')
+    implementation project(path: ':data')
 }

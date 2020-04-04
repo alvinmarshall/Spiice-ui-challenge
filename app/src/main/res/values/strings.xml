@@ -65,4 +65,24 @@
         <item>Filters 3</item>
     </string-array>
 
+    <!-- PREF LOGIN -->
+    <string name="pref_isLogin_key">user_login</string>
+    <string name="pref_login_name_key">login_name</string>
+    <string name="pref_login_email_key">login_email</string>
+
+    <string name="pref_login_avatar_key">user_avatar</string>
+    <string name="pref_login_access_token_key">access_token</string>
+    <string name="pref_login_refresh_token_key">refresh_token</string>
+    <string name="pref_first_time_login_key">first_time_login</string>
+
+    <string name="error_empty_input">Invalid input</string>
+    <string name="error_invalid_email">Invalid input</string>
+    <string name="error_invalid_credentials">Username or password incorrect</string>
+    <string name="error_no_network_connectivity">No internet connection</string>
+
+    <!--    NOTIFICATION-->
+    <string name="notification_type_message">message</string>
+    <string name="notification_type_register">register</string>
+
+
 </resources>

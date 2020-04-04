@@ -15,6 +15,9 @@
             app:launchSingleTop="false"
             app:popUpTo="@id/signInFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_signUpFragment_to_spiiceNavActivity"
+            app:destination="@id/spiiceNavActivity" />
     </fragment>
     <fragment
         android:id="@+id/signInFragment"
@@ -40,6 +43,9 @@
         <action
             android:id="@+id/action_starterFragment_to_onBoardingFragment"
             app:destination="@id/onBoardingFragment" />
+        <action
+            android:id="@+id/action_starterFragment_to_spiiceNavActivity"
+            app:destination="@id/spiiceNavActivity" />
     </fragment>
     <fragment
         android:id="@+id/onBoardingFragment"

@@ -16,7 +16,10 @@ dependencies {
     //Retrofit
     implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofit_version"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.retrofit_version"
-    implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofit_version"
+
+    //Gson
+    implementation "com.google.code.gson:gson:$rootProject.gson_version"
+
 
 
     implementation project(path: ':data')

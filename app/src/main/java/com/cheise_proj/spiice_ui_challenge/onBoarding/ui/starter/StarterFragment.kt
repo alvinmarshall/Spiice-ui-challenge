@@ -7,12 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.cheise_proj.spiice_ui_challenge.R
+import com.cheise_proj.spiice_ui_challenge.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_starter.*
 
 /**
  * A simple [Fragment] subclass.
  */
-class StarterFragment : Fragment() {
+class StarterFragment : BaseFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -20,6 +21,20 @@ class StarterFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_starter, container, false)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        if (prefs.getUserSession().isLogin) {
+            return navigateToFeed()
+        }
+    }
+
+    private fun navigateToFeed() {
+        val action = StarterFragmentDirections.actionStarterFragmentToSpiiceNavActivity()
+        findNavController().navigate(action)
+        activity?.finish()
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
