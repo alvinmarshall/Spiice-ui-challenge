@@ -6,6 +6,7 @@ import com.cheise_proj.spiice_ui_challenge.utils.GetNotificationNavigationUtil
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 import dagger.android.AndroidInjection
+import timber.log.Timber
 import javax.inject.Inject
 
 class FCMService : FirebaseMessagingService() {
@@ -22,7 +23,7 @@ class FCMService : FirebaseMessagingService() {
 
     override fun onMessageReceived(p0: RemoteMessage) {
         super.onMessageReceived(p0)
-        println("data ${p0.data}")
+        Timber.i("fcm data ${p0.data}")
         val data = p0.data
         val getDirection = GetNotificationNavigationUtil(data["name"], data["email"])
         val direction =
@@ -38,7 +39,7 @@ class FCMService : FirebaseMessagingService() {
 
     override fun onNewToken(p0: String) {
         super.onNewToken(p0)
-        println("refresh token $p0")
+        Timber.i("fcm token $p0")
     }
 
 }

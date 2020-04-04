@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'androidx.navigation.safeargs.kotlin'
 apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
@@ -100,8 +102,20 @@ dependencies {
     implementation "androidx.work:work-runtime-ktx:$rootProject.worker_version"
     implementation "androidx.work:work-rxjava2:$rootProject.worker_version"
 
+    //Firebase
     //firebase messaging
     implementation "com.google.firebase:firebase-messaging:$rootProject.firebase_msg_version"
+
+    //firebase crashlytics
+    implementation "com.google.firebase:firebase-crashlytics:$rootProject.firebaseCrash_version"
+    //firebase analytics
+    implementation "com.google.firebase:firebase-analytics:$rootProject.firebase_version"
+
+
+    //timber
+    implementation "com.jakewharton.timber:timber:$rootProject.timber_version"
+
+
     implementation project(path: ':local')
     implementation project(path: ':remote')
     implementation project(path: ':domain')
