@@ -11,7 +11,7 @@ Check their twitter handle https://twitter.com/ardejob
 * [x] Feed Page
   * [x] Active Project
   * [x] Upload Project
-  * []  Feed Detail
+  * [ ]  Feed Detail
 * [x] Search Page
   * [x] Post Detail Page
   * [x] Proposition Page
@@ -25,18 +25,18 @@ Check their twitter handle https://twitter.com/ardejob
 * [X] Firebase Messaging
 
 * [x] Firebase Cloud Functions
-    *[x] Firebase Authentication
-    *[x] Firestore Database
+    * [x] Firebase Authentication
+    * [x] Firestore Database
 
 * [x] Clean Architecture
-    *[x] MVVM
-    *[x] Repository Pattern
+    * [x] MVVM
+    * [x] Repository Pattern
 
 * [x] Jetpack libs
-    *[x] LiveData
-    *[x] Work Manager
-    *[x] ViewModel
-    *[ ] Databinding should be **optional**
+    * [x] LiveData
+    * [x] Work Manager
+    * [x] ViewModel
+    * [ ] Databinding should be **optional**
 
 ## Module Under Test
 * [x] Domain layer
