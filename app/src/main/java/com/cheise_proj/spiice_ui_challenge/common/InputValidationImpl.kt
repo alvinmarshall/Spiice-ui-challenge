@@ -30,4 +30,14 @@ class InputValidationImpl @Inject constructor() : InputValidation {
         val imm = view.context.getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager
         imm?.hideSoftInputFromWindow(view.windowToken, 0)
     }
+
+    override fun isTextLengthGreater(view: View, count: Int, message: String?): Boolean {
+        val editText = view as EditText
+        val value = editText.text.toString().trim()
+        if (value.length < count) {
+            editText.error = message ?: "length should be greater than $count"
+            return false
+        }
+        return true
+    }
 }

@@ -16,6 +16,7 @@ import com.cheise_proj.spiice_ui_challenge.R
 import com.cheise_proj.spiice_ui_challenge.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_sign_up.*
 import org.jetbrains.anko.support.v4.toast
+import timber.log.Timber
 import javax.inject.Inject
 
 /**
@@ -38,10 +39,12 @@ class SignUpFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        hideProgress(progressBar)
         tv_footer.setOnClickListener {
             navigateToSignInPage()
         }
         btn_sign_up.setOnClickListener {
+            inputValidation.hideKeyboard(it)
             registerUser()
         }
     }
@@ -60,6 +63,7 @@ class SignUpFragment : BaseFragment() {
         if (!inputValidation.isEditTextFilled(et_last_name)) return
         if (!inputValidation.isEditTextFilled(et_email, null, true)) return
         if (!inputValidation.isEditTextFilled(et_password)) return
+        if (!inputValidation.isTextLengthGreater(et_password, 6)) return
 
         val name = "${et_first_name.text} ${et_last_name.text}"
         val email = et_email.text.toString()
@@ -76,6 +80,7 @@ class SignUpFragment : BaseFragment() {
                     STATUS.LOADING -> showProgress(progressBar)
                     STATUS.SUCCESS -> {
                         hideProgress(progressBar)
+                        Timber.i("user- ${resource.data}")
                         with(resource.data) {
                             val session =
                                 UserSession(true, this?.email, this?.avatarUrl, this?.name)
@@ -87,7 +92,8 @@ class SignUpFragment : BaseFragment() {
                     }
                     STATUS.ERROR -> {
                         hideProgress(progressBar)
-                        toast("error: ${resource?.message}")
+                        toast("${resource.message}")
+                        Timber.i("error: ${resource?.message}")
                     }
                 }
 
@@ -97,11 +103,14 @@ class SignUpFragment : BaseFragment() {
     private fun navigateToFeedPage() {
         val action = SignUpFragmentDirections.actionSignUpFragmentToSpiiceNavActivity()
         findNavController().navigate(action)
+        activity?.finish()
+        Timber.i("actionSignUpFragmentToSpiiceNavActivity")
     }
 
     private fun navigateToSignInPage() {
         val action = SignUpFragmentDirections.actionSignUpFragmentToSignInFragment()
         findNavController().navigate(action)
+        Timber.i("actionSignUpFragmentToSignInFragment")
     }
 
 }
