@@ -1,6 +1,8 @@
 package com.cheise_proj.spiice_ui_challenge.spiice.ui.search
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.cheise_proj.spiice_ui_challenge.R
+import com.cheise_proj.spiice_ui_challenge.common.DELAY_TIME
 import com.cheise_proj.spiice_ui_challenge.common.ItemClickListener
 import com.cheise_proj.spiice_ui_challenge.spiice.ui.search.adapter.SearchAdapter
 import kotlinx.android.synthetic.main.fragment_search.*
@@ -50,12 +53,13 @@ class SearchFragment : Fragment() {
 
     private fun configViewModel() {
         viewModel = ViewModelProvider(this)[SearchViewModel::class.java]
-        subscribeObserver()
+        val handler = Handler(Looper.getMainLooper())
+        handler.postDelayed({ subscribeObserver() }, DELAY_TIME)
     }
 
     private fun subscribeObserver() {
         viewModel.getPost.observe(viewLifecycleOwner, Observer { post ->
-
+            hideProgress(progressBar)
             adapter.submitList(post)
             recycler_view.adapter = adapter
 
@@ -69,6 +73,10 @@ class SearchFragment : Fragment() {
             findNavController().navigate(action)
         }
 
+    }
+
+    private fun hideProgress(view: View) {
+        view.visibility = View.GONE
     }
 
 }

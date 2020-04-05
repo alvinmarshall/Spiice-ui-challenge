@@ -1,6 +1,8 @@
 package com.cheise_proj.spiice_ui_challenge.spiice.ui.messages
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.cheise_proj.spiice_ui_challenge.R
+import com.cheise_proj.spiice_ui_challenge.common.DELAY_TIME
 import com.cheise_proj.spiice_ui_challenge.spiice.ui.messages.adapter.MessageAdapter
 import kotlinx.android.synthetic.main.fragment_messages.*
 
@@ -43,7 +46,8 @@ class MessagesFragment : Fragment() {
 
     private fun configViewModel() {
         viewModel = ViewModelProvider(this)[MessagesViewModel::class.java]
-        subscribeObserver()
+        val handler = Handler(Looper.getMainLooper())
+        handler.postDelayed({subscribeObserver()}, DELAY_TIME)
     }
 
     private fun subscribeObserver() {

@@ -19,6 +19,7 @@ import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
 import kotlinx.android.synthetic.main.fragment_feed.*
+import timber.log.Timber
 
 /**
  * A simple [Fragment] subclass.
@@ -30,6 +31,7 @@ class FeedFragment : Fragment() {
         override fun data(t: Project) {
             val action = FeedFragmentDirections.actionFeedFragmentToCurrentProjectFragment(t)
             findNavController().navigate(action)
+            Timber.i("actionFeedFragmentToCurrentProjectFragment")
 
         }
     }

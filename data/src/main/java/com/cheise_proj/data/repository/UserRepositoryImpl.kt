@@ -17,12 +17,9 @@ class UserRepositoryImpl @Inject constructor(
     private val userLocal: UserLocalSource
 ) : UserRepository {
     override fun getAuthUser(email: String, password: String): Observable<UserEntity> {
-        val local = userLocal.getAuthUser(email, password)
-            .map { t: UserData -> userMapper().dataToEntity(t) }.toObservable()
         return userRemote.fetchAuthUser(email, password).map { t: UserData ->
-            userLocal.saveUser(t)
             return@map userMapper().dataToEntity(t)
-        }.concatWith(local)
+        }
     }
 
     override fun getUserProfile(): Observable<ProfileEntity> {
