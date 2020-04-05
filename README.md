@@ -72,7 +72,7 @@ Check their twitter handle https://twitter.com/ardejob
 
 ## APK File
 
-[![file](./images/ic_launcher_round.png)](./apk/spiice.apk, "download spiice apk")
+[![file](./images/ic_launcher_round.png)](https://github.com/Bik-Krlvn/Spiice-ui-challenge/raw/develop/apk/spiice.apk "download spiice apk")
 
 ## App Screenshots
 
