@@ -1,3 +1,7 @@
+[![license](https://img.shields.io/github/license/DAVFoundation/captain-n3m0.svg?style=flat-square)](./LICENSE)
+
+
+
 # Spiice-ui-challenge
 Ardejob community challenge
 ## Ardejob community
@@ -30,7 +34,7 @@ Check their twitter handle https://twitter.com/ardejob
 
 * [x] Clean Architecture
     * [x] MVVM
-    * [x] Repository Pattern
+    * [x] SOLID Principles
 
 * [x] Jetpack libs
     * [x] LiveData
@@ -46,7 +50,7 @@ Check their twitter handle https://twitter.com/ardejob
 * [x] Presentation layer
 
 ## Data Flow
- > Presentation <- Data:(Remote , Local)  <- Domain
+ > Presentation -> Use Cases -> Domain <- Data:  <- (Remote,Local)
 
 ## App Progress
 > Application is still under development, even though deadline is due
