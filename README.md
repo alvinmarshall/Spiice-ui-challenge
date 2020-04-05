@@ -71,6 +71,7 @@ Check their twitter handle https://twitter.com/ardejob
 1. Time frame limited with task at hand
 
 ## APK File
+> Can use pre define email: dustin@me.com, pass: 123456 or create new account with basic info. For **reviewers** only
 
 [![file](./images/ic_launcher_round.png)](https://github.com/Bik-Krlvn/Spiice-ui-challenge/raw/develop/apk/spiice.apk "download spiice apk")
 
