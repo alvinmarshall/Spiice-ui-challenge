@@ -43,11 +43,15 @@ class RemoteModule {
 
     @Suppress("SpellCheckingInspection")
     @Provides
-    fun provideOkttpClient(tokenService: TokenService): OkHttpClient {
+    fun provideOkttpClient(
+        tokenService: TokenService,
+        tokenAuthenticator: TokenAuthenticator
+    ): OkHttpClient {
         return OkHttpClient.Builder()
             .connectTimeout(5, TimeUnit.MINUTES)
             .writeTimeout(5, TimeUnit.MINUTES)
             .readTimeout(5, TimeUnit.MINUTES)
+            .authenticator(tokenAuthenticator)
             .addInterceptor(tokenService)
             .retryOnConnectionFailure(true)
             .build()
